@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
+            
             Text("Hello, world!")
         }
-        .padding()
+        
     }
 }
 
